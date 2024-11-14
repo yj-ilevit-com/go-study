@@ -1,0 +1,6 @@
+go 1.23.2
+
+use (
+	./example/hello
+	/Users/levit/education/go-study/tutorial/step_2/1_multi-module/kjg/hello
+)
