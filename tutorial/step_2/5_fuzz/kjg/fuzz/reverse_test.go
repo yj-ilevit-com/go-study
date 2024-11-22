@@ -22,23 +22,13 @@ func Reverse(s string) (string, error) {
 }
 
 func main() {
-	input := "The quick brown fox jumped over the lazy dog"
+    // 테스트 입력 문자열
+    input := "The quick brown fox jumped over the lazy dog"
+    rev, revErr := Reverse(input)
+    doubleRev, doubleRevErr := Reverse(rev)
 
-	// Reverse 호출 시 반환값 두 개를 처리
-	rev, revErr := Reverse(input)
-	if revErr != nil {
-			fmt.Printf("Error reversing input: %v\n", revErr)
-			return
-	}
-
-	doubleRev, doubleRevErr := Reverse(rev)
-	if doubleRevErr != nil {
-			fmt.Printf("Error reversing reversed input: %v\n", doubleRevErr)
-			return
-	}
-
-	// 결과 출력
-	fmt.Printf("original: %q\n", input)
-	fmt.Printf("reversed: %q\n", rev)
-	fmt.Printf("reversed again: %q\n", doubleRev)
+    // 결과 출력
+    fmt.Printf("original: %q\n", input)
+    fmt.Printf("reversed: %q, err: %v\n", rev, revErr)
+    fmt.Printf("reversed again: %q, err: %v\n", doubleRev, doubleRevErr)
 }
